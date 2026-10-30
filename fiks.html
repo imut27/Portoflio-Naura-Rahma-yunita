@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Saya</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==================== VARIABLE & RESET ==================== */
+    :root {
+      --bg-gradient: radial-gradient(ellipse at 80% 10%, #52202f 0%, #35111d 38%, #210910 100%);
+      --primary-blue: #d59a9b;
+      --primary-hover: #e8b5ae;
+      --soft-blue-card: rgba(92, 39, 53, 0.55);
+      --glass-border: rgba(231, 177, 169, 0.2);
+      --text-dark: #f4e6dc;
+      --text-muted: #c9aeb0;
+      --accent-glow: rgba(213, 154, 155, 0.18);
+      --shadow-soft: 0 18px 50px rgba(15, 3, 8, 0.24);
+      --radius: 4px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'DM Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ==================== NAVBAR ==================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.2rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(238, 245, 255, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    /* ==================== CONTAINER & SECTIONS ==================== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0 3rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* ==================== HERO SECTION ==================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge-intro {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(37, 99, 235, 0.1);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: 50px;
+      color: var(--primary-blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--primary-blue);
+    }
+
+    .hero-description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary-blue);
+      color: white;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dark);
+      border: 2px solid rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(37, 99, 235, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Foto Profile Frame */
+    .photo-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 280px;
+      height: 350px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow-soft), 0 0 40px var(--accent-glow);
+      border: 4px solid white;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-frame:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Decorative Shapes */
+    .shape-1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(37, 99, 235, 0.15);
+      border-radius: 50%;
+      top: -20px;
+      right: -20px;
+      z-index: -1;
+      filter: blur(20px);
+    }
+
+    /* ==================== GLASS CARD ==================== */
+    .glass-card {
+      background: var(--soft-blue-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.15);
+    }
+
+    /* ==================== ABOUT SECTION ==================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .info-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .info-list i {
+      color: var(--primary-blue);
+      font-size: 1.1rem;
+    }
+
+    /* ==================== SKILLS SECTION ==================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--primary-blue);
+      border-radius: 10px;
+      transition: width 1s ease;
+    }
+
+    /* ==================== PROJECTS SECTION ==================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      flex: 0 0 180px;
+      background: linear-gradient(135deg, #a5c7f9, #78aef8);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-img--contain {
+      padding: 8px;
+      background-color: #f1f5f9;
+    }
+
+    .project-img--contain img {
+      object-fit: contain;
+    }
+
+    .project-img--top img {
+      object-position: top;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary-blue);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ==================== CERTIFICATE ==========================*/
+
+    
+
+    /* ==================== CONTACT & FOOTER ==================== */
+    .contact-card {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: var(--primary-blue);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      margin-top: 4rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .photo-frame {
+        width: 220px;
+        height: 280px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* ==================== EDITORIAL BURGUNDY THEME ==================== */
+    html {
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background-color: #210910;
+      background-image: var(--bg-gradient);
+      color: var(--text-dark);
+    }
+
+    .navbar {
+      padding: 1rem 8%;
+      background: rgba(33, 9, 16, 0.9);
+      border-bottom: 1px solid rgba(231, 177, 169, 0.16);
+    }
+
+    .logo {
+      color: #f2d8ce;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+    }
+
+    .logo i {
+      color: var(--primary-blue);
+    }
+
+    .nav-links {
+      gap: clamp(0.8rem, 1.7vw, 1.8rem);
+    }
+
+    .nav-links a {
+      color: #e7d2cc;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .container {
+      max-width: 1160px;
+    }
+
+    section {
+      padding: 6.5rem 0 4rem;
+    }
+
+    .section-title {
+      color: #f3e2d9;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.7rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .section-subtitle {
+      color: #c9aeb0;
+      letter-spacing: 0.04em;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 7rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2rem, 6vw, 6rem);
+    }
+
+    .badge-intro {
+      padding: 0;
+      border: 0;
+      background: none;
+      border-radius: 0;
+      color: #d7a5a0;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      max-width: 650px;
+      color: #f5e8df;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 8vw, 7.6rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.82;
+      margin: 0.4rem 0 1.5rem;
+    }
+
+    .hero-title span {
+      display: block;
+      color: #d59a9b;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      color: #d1babb;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      border-radius: 2px;
+      font-size: 0.75rem;
+      letter-spacing: 0.09em;
+      padding: 13px 20px;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: #c88788;
+      box-shadow: none;
+      color: #260d14;
+    }
+
+    .btn-primary:hover {
+      background: #e2aaa4;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(232, 194, 184, 0.55);
+      color: #f1ddd3;
+    }
+
+    .btn-outline:hover {
+      background: rgba(213, 154, 155, 0.12);
+    }
+
+    .photo-wrapper {
+      min-height: 460px;
+      align-items: center;
+    }
+
+    .photo-frame {
+      width: min(100%, 390px);
+      height: 500px;
+      border: 1px solid rgba(234, 190, 179, 0.6);
+      border-radius: 48% 48% 3px 3px;
+      background: #542332;
+      box-shadow: 0 0 0 12px rgba(213, 154, 155, 0.08), 0 30px 80px rgba(10, 2, 6, 0.35);
+    }
+
+    .photo-frame img {
+      filter: saturate(0.82);
+    }
+
+    .shape-1 {
+      width: 240px;
+      height: 240px;
+      background: rgba(213, 154, 155, 0.22);
+      filter: blur(55px);
+      right: 2%;
+      top: 8%;
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(105, 48, 63, 0.58), rgba(65, 24, 38, 0.72));
+      border: 1px solid rgba(231, 177, 169, 0.2);
+      border-radius: 3px;
+      box-shadow: var(--shadow-soft);
+      color: #f3e2d9;
+      backdrop-filter: blur(8px);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(231, 177, 169, 0.48);
+      box-shadow: 0 22px 55px rgba(15, 3, 8, 0.3);
+    }
+
+    .glass-card h3,
+    .project-card h3 {
+      color: #f4e6dc;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+    }
+
+    .glass-card h3 i {
+      color: var(--primary-blue) !important;
+    }
+
+    .info-list li {
+      color: #ead8d2;
+      font-size: 0.9rem;
+    }
+
+    .info-list i {
+      color: var(--primary-blue);
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .skill-info {
+      color: #f1ddd3;
+    }
+
+    .progress-bar {
+      background: rgba(238, 204, 194, 0.14);
+      border-radius: 0;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #a95e6c, #e2aaa4);
+      border-radius: 0;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .project-card {
+      padding: 1rem;
+    }
+
+    .project-card h3 {
+      min-height: 3.2em;
+    }
+
+    .project-img {
+      border-radius: 2px;
+      background: linear-gradient(135deg, #8d5660, #d7a39b);
+    }
+
+    .project-card > p,
+    .card-custom .card-text {
+      color: #d2b9b7 !important;
+      line-height: 1.75;
+    }
+
+    .project-tags {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .tag {
+      background: rgba(213, 154, 155, 0.14);
+      border: 1px solid rgba(213, 154, 155, 0.22);
+      border-radius: 2px;
+      color: #e8b8ae;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #certificate .row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 0;
+    }
+
+    #certificate .col-md-6 {
+      padding: 0;
+      width: auto;
+    }
+
+    .card-custom {
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(231, 177, 169, 0.2);
+      border-radius: 3px;
+      background: rgba(82, 34, 49, 0.7);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cert-img-container {
+      min-height: 210px;
+      background: #f0e3dc !important;
+    }
+
+    .cert-img-container img {
+      display: block;
+      width: 100%;
+      max-height: none;
+      margin: 0 auto;
+    }
+
+    .card-body {
+      padding: 1.4rem !important;
+    }
+
+    .card-body .text-dark,
+    .card-title {
+      color: #f3e2d9 !important;
+    }
+
+    .card-body .text-secondary,
+    .card-body .text-muted {
+      color: #d2b9b7 !important;
+    }
+
+    .card-body code {
+      color: #e9b7ad;
+    }
+
+    .cert-badge {
+      color: #e9b7ad;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    #certificate .btn-outline-primary {
+      border: 1px solid #d59a9b;
+      color: #f0c7bd;
+      text-decoration: none;
+    }
+
+    #certificate .btn-outline-primary:hover {
+      background: #d59a9b;
+      color: #260d14;
+    }
+
+    #contact .glass-card {
+      background: linear-gradient(145deg, #5b2637, #35111d) !important;
+      border: 1px solid rgba(231, 177, 169, 0.28) !important;
+      box-shadow: 0 20px 60px rgba(10, 2, 6, 0.3) !important;
+    }
+
+    #contact h2 {
+      color: #f3e2d9 !important;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem !important;
+    }
+
+    #contact p {
+      color: #d2b9b7 !important;
+    }
+
+    #contact > div > a {
+      background: #c88788 !important;
+      border-radius: 2px !important;
+      box-shadow: none !important;
+      color: #260d14 !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #contact > div > div a {
+      background: rgba(238, 204, 194, 0.12) !important;
+      color: #f0c7bd !important;
+    }
+
+    footer {
+      border-top: 1px solid rgba(231, 177, 169, 0.16);
+      color: #b99b9e;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0.85rem 5%;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      .hero-grid {
+        gap: 2rem;
+      }
+
+      .hero-text {
+        text-align: left;
+      }
+
+      .hero-title {
+        font-size: clamp(3.8rem, 15vw, 6rem);
+      }
+
+      .hero-buttons {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .photo-wrapper {
+        min-height: 360px;
+      }
+
+      .photo-frame {
+        width: 250px;
+        height: 350px;
+      }
+
+      .about-grid {
+        text-align: left;
+      }
+
+      #certificate .row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+
+      .hero-buttons .btn {
+        padding: 12px 14px;
+        font-size: 0.65rem;
+      }
+
+      .section-title {
+        font-size: 2.6rem;
+      }
+
+      .glass-card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <i class="fa-solid font-code"></i> Naura Rahma Yunita
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#certificate">Certificate</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="badge-intro">
+            <i class="fa-solid fa-sparkles"></i> Selamat Datang di Web Portofolio Saya
+          </div>
+          <h1 class="hero-title">Halo, Saya <span>Naura</span></h1>
+          <p class="hero-description">
+            Siswa Rekayasa Perangkat Lunak (RPL) yang berfokus pada pembuatan tampilan web modern, rapi, dan responsif dengan kombinasi warna aesthetic.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-briefcase"></i> Lihat Proyek
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <!-- FOTO PROFIL -->
+        <div class="photo-wrapper">
+          <div class="shape-1"></div>
+          <div class="photo-frame">
+            <!-- Ganti foto-kamu.jpg dengan nama file fotomu -->
+            <img src="rara.jpeg" alt="Foto Profil Saya">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Tentang Saya</h2>
+      <p class="section-subtitle">Mengenal lebih dekat latar belakang dan minat saya</p>
+      
+      <div class="about-grid">
+        <div class="glass-card">
+          <h3><i class="fa-solid fa-user-gear" style="color: var(--primary-blue);"></i> Profil Ringkas</h3>
+          <p style="margin-top: 1rem; color: var(--text-muted);">
+            Saya memiliki ketertarikan tinggi dalam pemrograman web dan desain antarmuka (*UI/UX*). Selalu antusias untuk mempelajari teknologi baru dan mengasah kemampuan coding.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <h3><i class="fa-solid fa-address-card" style="color: var(--primary-blue);"></i> Informasi Kontak</h3>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-graduation-cap"></i> SMKN 8 Jember - Jurusan RPL</li>
+            <li><i class="fa-solid fa-location-dot"></i> Jember, Jawa Timur, Indonesia</li>
+            <li><i class="fa-solid fa-envelope"></i>n68502590@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Keahlian Utama</h2>
+      <p class="section-subtitle">Teknologi dan kemampuan yang terus saya kembangkan</p>
+
+      <div class="skills-grid">
+        <div class="glass-card">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>HTML & CSS</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Bootstrap / Tailwind CSS</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>PHP & MySQL</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>JavaScript (Basic)</span>
+              <span>70%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Proyek Portofolio</h2>
+      <p class="section-subtitle">Beberapa hasil karya web yang pernah saya selesaikan</p>
+
+      <div class="projects-grid">
+        <!-- Card Proyek 1 -->
+        <div class="project-card glass-card">
+          <div class="project-img">
+            <img src="landg.png" alt="Landing Page Donat">
+          </div>
+          <h3>Landing Page donat</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">
+            Desain landing page interaktif untuk brand donat 'Donut Dreams'. Menampilkan visual produk yang memikat, skema warna pastel yang manis, dan tata letak responsif di berbagai perangkat
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- Card Proyek: Sistem Informasi Data Guru & Siswa -->
+        <div class="glass-card project-card">
+          <div class="project-img project-img--contain">
+            <img src="rara.png" alt="Aplikasi Data Guru SMK">
+          </div>
+          <h3>Sistem Informasi Manajemen Sekolah (SmartSekolah)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">
+            Aplikasi berbasis web untuk mengelola data sekolah secara efisien. Memiliki fitur manajemen data guru dan jurusan dengan operasi CRUD serta integrasi basis data MySQL.
+          </p>
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">CRUD</span>
+          </div>
+        </div>
+
+        <!-- Card Proyek: Web Profile Jurusan RPL -->
+        <div class="glass-card project-card">
+          <div class="project-img project-img--top">
+            <img src="web data.png" alt="Web Profile Jurusan RPL">
+          </div>
+          <h3>Pengelolaan Data Siswa dan Data Guru</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">
+            Aplikasi berbasis web untuk memudahkan pengelolaan data akademis sekolah. Dilengkapi fitur untuk melihat, menambah, mengubah, dan menghapus (CRUD) data siswa serta data guru.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Section Sertifikat -->
+<section id="certificate" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Sertifikat & Lisensi Resmi</h2>
+            <p class="section-subtitle">Bukti fisik sertifikasi keahlian terverifikasi dari Getskill.id</p>
+        </div>
+        
+        <div class="row g-4">
+          
+            <!-- Sertifikat 1: Bootstrap -->
+            <div class="col-md-6">
+                <div class="card card-custom h-100">
+                    <div class="cert-img-container p-3 text-center" style="background-color: #fff; border-radius: 12px 12px 0 0; overflow: hidden;">
+                        <img src="ser11.png" alt="Sertifikat Bootstrap" class="img-fluid" style="max-width: 100% !important; height: auto !important; object-fit: contain;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cert-badge">Getskill.id</span>
+                                <small class="text-muted"><i class="far fa-calendar-alt me-1"></i>Berlaku s.d. 08 Oktober 2029</small>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark mt-2">Pemrograman Front End Web dengan Bootstrap</h5>
+                            <p class="card-text text-secondary small mb-1">Penerima: <strong>Naura Rahma Yunita</strong></p>
+                            <p class="card-text text-secondary small">No. Sertifikat: <code>12202610081409</code></p>
+                        </div>
+                        <div class="mt-3 text-end border-top pt-3">
+                            <a href="https://getskill.id/certificate/12202610081409" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill fw-bold px-3">
+                                <i class="fas fa-check-circle me-1"></i> Verifikasi Resmi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sertifikat 2: PHP -->
+            <div class="col-md-6">
+                <div class="card card-custom h-100">
+                    <div class="cert-img-container p-3 text-center" style="background-color: #fff; border-radius: 12px 12px 0 0; overflow: hidden;">
+                        <img src="ser2.png" alt="Sertifikat Java" class="img-fluid" style="max-width: 100% !important; height: auto !important; object-fit: contain;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="cert-badge">Getskill.id</span>
+                                <small class="text-muted"><i class="far fa-calendar-alt me-1"></i>Berlaku s.d. 22 Des 2028</small>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark mt-2">Pemograman Web dengan PHP Native</h5>
+                            <p class="card-text text-secondary small mb-1">Penerima: <strong>Naura Rahma Yunita</strong></p>
+                            <p class="card-text text-secondary small">No. Sertifikat: <code>12202610081413</code></p>
+                        </div>
+                        <div class="mt-3 text-end border-top pt-3">
+                            <a href="https://getskill.id/certificate/12202610081413" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill fw-bold px-3">
+                                <i class="fas fa-check-circle me-1"></i> Verifikasi Resmi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <!-- Section Kontak / Mari Terhubung -->
+<section id="contact" style="padding: 4rem 1rem;">
+  <div class="glass-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; text-align: center; border-radius: 20px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);">
+    
+    <h2 style="font-size: 2rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem;">Mari Terhubung!</h2>
+    <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem;">Terbuka untuk diskusi proyek, kolaborasi, atau sekadar bertanya.</p>
+
+    <!-- Tombol Kirim Email -->
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=n68502590@gmail.com&su=Halo%20Okta%20-%20Diskusi%20Proyek" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; background-color: #2563eb; color: white; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); margin-bottom: 2rem;">
+      ✉ Kirim Pesan Email
+    </a>
+    <!-- Link Ikon Sosial Media (TikTok, GitHub, Instagram) -->
+    <div style="display: flex; justify-content: center; gap: 1rem;">
+      
+      <!-- 1. TikTok -->
+      <a href="https://www.tiktok.com/@gasukaaa8" target="_blank" rel="noreferrer" title="TikTok" style="width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #0f172a; text-decoration: none; font-size: 1.2rem; transition: all 0.2s ease;">
+        <!-- Ikon SVG TikTok -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5c.28 0 .552.023.817.067V8.15A3 3 0 1 0 9 11V0z"/>
+        </svg>
+      </a>
+
+      <!-- 2. GitHub (Ganti username_github dengan nama akunmu) -->
+      <a href="https://github.com/imut27" target="_blank" title="GitHub" style="width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #0f172a; text-decoration: none; font-size: 1.2rem; transition: all 0.2s ease;">
+        <!-- Ikon SVG GitHub -->
+        <svg xmlns="https://github.com/imut27" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+
+      <!-- 3. Instagram -->
+      <a href="https://www.instagram.com/nauraa27._/" target="_blank" rel="noreferrer" title="Instagram" style="width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #0f172a; text-decoration: none; font-size: 1.2rem; transition: all 0.2s ease;">
+        <!-- Ikon SVG Instagram -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+          <rect x="2.25" y="2.25" width="11.5" height="11.5" rx="3.25"/>
+          <circle cx="8" cy="8" r="2.75"/>
+          <circle cx="11.5" cy="4.5" r=".75" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Naura Rahma Yunita. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
